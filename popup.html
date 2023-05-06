@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="./materialize.css"
+    />
+    <script src="./materialize.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10%;
+        text-align: center;
+      }
+      h1 {
+        font-size: 24px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .row{
+        margin: 0;
+      }
+      table {
+        margin-right: 10px;
+      }
+      tr {
+        border: none;
+      }
+      img {
+        width: 50px;
+        /* height: 10px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+        <img src="icon.png"/>
+        <h1>Netflix Skipper</h1>
+    </div>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="skipIntro">Skip Intro</label></td>
+                <td>
+                    <div class="switch">
+                    <label>
+                        <input type="checkbox" id="skipIntro" checked />
+                        <span class="lever"></span>
+                    </label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="nextEpisode">Next Episode</label></td>
+                <td>
+                    <div class="switch">
+                    <label>
+                        <input type="checkbox" id="nextEpisode" checked />
+                        <span class="lever"></span>
+                    </label>
+                    </div>
+                </td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+    <script src="popup.js"></script>
+  </body>
+</html>
