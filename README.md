@@ -1,6 +1,13 @@
 # Netflix-Skipper
 Automatically skip Netflix intros and jump to the next episode.
 
+## Features
+Skip Intros and Outros<br>
+Save Yourself some precious time<br>
+Especially useful when watching Anime<br>
+Completely Open Source<br>
+You have the control
+
 ## Installation
 ### Automatic
 1. Download from chrome web store!
