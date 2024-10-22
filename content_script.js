@@ -11,6 +11,7 @@ function clickButton(dataUia) {
 function checkForButtons() {
   if (skipIntroEnabled) {
     clickButton("player-skip-intro");
+    clickButton("player-skip-recap");
   }
   if (nextEpisodeEnabled) {
     clickButton("next-episode-seamless-button-draining");
