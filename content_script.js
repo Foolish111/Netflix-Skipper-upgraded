@@ -1,5 +1,6 @@
 let skipIntroEnabled = true;
 let nextEpisodeEnabled = true;
+let skipRecapEnabled= true;
 
 function clickButton(dataUia) {
   const button = document.querySelector(`[data-uia="${dataUia}"]`);
@@ -11,15 +12,17 @@ function clickButton(dataUia) {
 function checkForButtons() {
   if (skipIntroEnabled) {
     clickButton("player-skip-intro");
-    clickButton("player-skip-recap");
   }
   if (nextEpisodeEnabled) {
     clickButton("next-episode-seamless-button-draining");
     clickButton("next-episode-seamless-button");
   }
+  if (skipRecapEnabled){
+    clickButton("player-skip-recap");
+  }
 }
 
-setInterval(checkForButtons, 500);
+setInterval(checkForButtons, 1000);
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "toggleSkipIntro") {
@@ -27,6 +30,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
   if (request.action === "toggleNextEpisode") {
     nextEpisodeEnabled = request.value;
+  }
+  if (request.action === "toggleSkipRecap") {
+    skipRecapEnabled = request.value;
   }
   sendResponse({ success: true });
 });

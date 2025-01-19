@@ -1,5 +1,6 @@
 const skipIntroToggle = document.getElementById("skipIntro");
 const nextEpisodeToggle = document.getElementById("nextEpisode");
+const skipRecapToggle = document.getElementById("skipRecap");
 
 function updateSetting(key, value) {
   chrome.storage.local.set({ [key]: value });
@@ -32,10 +33,16 @@ nextEpisodeToggle.addEventListener("change", (event) => {
   console.log("toggleNextEpisode", event.target.checked);
   sendMessage("toggleNextEpisode", event.target.checked);
 });
-
+skipRecapToggle.addEventListener("change", (event) => {
+  updateSetting("skipRecap", event.target.checked);
+  console.log("toggleSkipRecap", event.target.checked);
+  sendMessage("toggleSkipRecap", event.target.checked);
+});
 chrome.storage.local.get(["skipIntro", "nextEpisode"], (result) => {
   skipIntroToggle.checked = result.skipIntro !== false;
   nextEpisodeToggle.checked = result.nextEpisode !== false;
+  skipRecapToggle.checked = result.skipRecap !== false;
   sendMessage("toggleSkipIntro", skipIntroToggle.checked);
   sendMessage("toggleNextEpisode", nextEpisodeToggle.checked);
+  sendMessage("toggleSkipRecap", skipRecapToggle.checked);
 });
