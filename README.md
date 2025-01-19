@@ -1,5 +1,5 @@
-# Netflix-Skipper
-Automatically skip Netflix intros and jump to the next episode.
+# Netflix-Skipper Upgraded
+Automatically skip Netflix intros and jump to the next episode + now you can toggle skipping recap or not.
 
 ## Features
 Skip Intros and Outros<br>
